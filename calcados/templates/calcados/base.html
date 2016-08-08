@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Loja de Calcados</title>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+<div id='cssmenu'>
+	<ul>
+		<li><a href="{% url 'home' %}"><span>Home</span></a></li>
+		<li class='active has-sub'><a href='#'><span>Calcados</span></a>
+			<ul>
+				<li class='has-sub'><a href="{% url 'cadastrar_calcado' %}"><span>Cadastrar</span></a></li>
+				<li class='has-sub'><a href="{% url 'exibir_calcado' %}"><span>Consultar</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_alterar_calcado' %}"><span>Alterar</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_excluir_calcado' %}"><span>Excluir</span></a></li>
+			</ul>
+		</li>
+		<li class='active has-sub'><a href='#'><span>Estante</span></a>
+			<ul>
+				<li class='has-sub'><a href="{% url 'cadastrar_estante' %}"><span>Cadastrar</span></a></li>
+				<li class='has-sub'><a href="{% url 'exibir_estante' %}"><span>Consultar</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_alterar_estante' %}"><span>Alterar</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_excluir_estante' %}"><span>Excluir</span></a></li>
+			</ul>
+		</li>
+		<li class='active has-sub'><a href='#'><span>Cliente</span></a>
+			<ul>
+				<li class='has-sub'><a href="{% url 'cadastrar_cliente' %}"><span>Cadastrar</span></a></li>
+				<li class='has-sub'><a href="{% url 'exibir_cliente' %}"><span>Consultar</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_alterar_cliente' %}"><span>Alterar</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_excluir_cliente' %}"><span>Excluir</span></a></li>
+			</ul>
+		</li>
+		<li class='active has-sub'><a href='#'><span>Carrinho</span></a>
+			<ul>
+				<li class='has-sub'><a href="{% url 'iniciar_carrinho' %}"><span>Iniciar</span></a></li>
+				<li class='has-sub'><a href="{% url 'exibir_carrinho' %}"><span>Ver</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_add_calcado' %}"><span>Adicionar Item</span></a></li>
+				<li class='has-sub'><a href="{% url 'busca_rem_calcado' %}"><span>Remover Item</span></a></li>
+				<li class='has-sub'><a href="{% url 'efetuar_venda' %}"><span>Efetuar Venda</span></a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

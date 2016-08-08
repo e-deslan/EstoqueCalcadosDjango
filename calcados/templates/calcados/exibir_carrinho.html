@@ -1,0 +1,20 @@
+{% extends 'calcados/base.html' %}
+
+{% block content %}
+<h2>Carrinho de {{venda.cliente.nome}}</h2>
+<p>Vendedor: {{venda.vendedor.nome}}</p>
+{% if venda.status == 'a' %}
+	<p>Status: Em andamento</p>
+{% else %}
+	<p>Status: Finalizado</p>
+{% endif %}
+<p>Itens:</p>
+{% if venda.calcado_set %}
+	{% for item in venda.calcado_set.all %}
+		<p>-- [{{item.id}}]  {{item.marca}} {{item.modelo}} [tam: {{item.tamanho}}] [cor: {{item.cor}}] [preço: {{item.preco}}]</p>
+	{% endfor %}
+{% else %}
+	<p>Nenhum</p>
+{% endif %}
+<p>Total: {{venda.total}}</p>
+{% endblock%}

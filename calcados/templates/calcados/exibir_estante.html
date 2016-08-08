@@ -1,0 +1,18 @@
+{% extends 'calcados/base.html' %}
+
+{% block content %}
+<h2>Estante {{estante.id}}</h2>
+{% if estante.tipo == 'v' %}
+	<p>Tipo: Vitrine</p>
+{% else %}
+	<p>Tipo: Deposito</p>
+{% endif %}
+{% if estante.calcado_set.all %}
+	<p>Itens:</p>
+	{% for calcado in estante.calcado_set.all %}
+		<p>-- [{{calcado.id}}] {{calcado.marca}} {{calcado.modelo}} [tam: {{calcado.tamanho}}] [cor: {{calcado.cor}}]</p>
+	{% endfor %}
+{% else %}
+	<p>Vazia</p>
+{% endif %}
+{% endblock%}

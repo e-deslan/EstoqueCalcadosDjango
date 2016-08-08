@@ -1,0 +1,8 @@
+{% extends 'calcados/base.html' %}
+
+{% block content %}
+<form method="POST" readonly>
+	{% csrf_token %}
+	{{ form.as_p }}
+</form>
+{% endblock%}

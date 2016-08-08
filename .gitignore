@@ -1,0 +1,4 @@
+*.pyc
+/calcados/migrations
+manage.py
+db.sqlite3
